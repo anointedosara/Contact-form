@@ -211,7 +211,7 @@ input[type="checkbox"] {
 }
 @media screen and (max-width: 767px) {
   body {
-    height: 100vh;
+    height: 100%;
   }
   .inner-wrapper {
     max-width: 350px;
