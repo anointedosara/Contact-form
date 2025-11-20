@@ -59,23 +59,23 @@ radio.forEach(item => {
 });
 
 const handleSubmit = () => {
-  data.fname === ""
-    ? fname.nextElementSibling.classList.add("show")
+  data.fname.trim() === ""
+    ? (fname.nextElementSibling.classList.add("show"), (sbt.fName = ""))
     : (fname.nextElementSibling.classList.remove("show"), (sbt.fName = true));
-  data.lname === ""
-    ? lname.nextElementSibling.classList.add("show")
+  data.lname.trim() === ""
+    ? (lname.nextElementSibling.classList.add("show"), (sbt.lName = ""))
     : (lname.nextElementSibling.classList.remove("show"), (sbt.lName = true));
-  data.email !== "" && data.email.includes("@" && ".com")
+  data.email.trim() !== "" && data.email.includes("@" && ".com")
     ? (invalid.classList.remove("show"), (sbt.emailAdd = true))
-    : invalid.classList.add("show");
-  data.message === ""
-    ? message.nextElementSibling.classList.add("show")
+    : (invalid.classList.add("show"), (sbt.emailAdd = ""));
+  data.message.trim() === ""
+    ? (message.nextElementSibling.classList.add("show"), (sbt.mess = ""))
     : (message.nextElementSibling.classList.remove("show"), (sbt.mess = true));
   data.concent === false
-    ? err.classList.add("show")
+    ? (err.classList.add("show"), (sbt.concentBox = ""))
     : (err.classList.remove("show"), (sbt.concentBox = true));
   data.radio === false
-    ? quer.classList.add("show")
+    ? (quer.classList.add("show"), (sbt.radioBtn = ""))
     : (quer.classList.remove("show"), (sbt.radioBtn = true));
 
   if (
